@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Years</title>
+</head>
+<p id="target"></p>
+<body>
+<script>
+    let start,end,year,results;
+
+    start = parseInt(prompt("Enter your starting year"));
+    end = parseInt(prompt("Enter your ending year"));
+    results = " ";
+
+    for (year = start; year <= end; year++){
+        if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+            results += "<li>" + year + "</li>"
+        }
+    }
+
+    document.querySelector('#target').innerHTML = results;
+
+</script>
+</body>
+</html>

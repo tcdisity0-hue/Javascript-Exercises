@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+    let number,Prime;
+
+    number = parseInt(prompt("Enter your number"));
+    Prime = true;
+
+    if (number <= 1){
+        Prime = false;
+    } else {
+        for (let i = 2; i < number; i++){
+            if (number % i === 0){
+                Prime = false;
+                break
+            }
+        }
+    }
+
+    if (Prime){
+        document.querySelector('#target').innerHTML = number + " is a Prime number."
+    } else{
+        document.querySelector('#target').innerHTML = number + " is not a Prime number."
+    }
+</script>
+</body>
+</html>

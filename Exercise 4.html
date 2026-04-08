@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting hat</title>
+</head>
+
+<p id="target"></p>
+<body>
+
+<script>
+
+    'use strict';
+
+    let name,hat;
+
+    name = prompt("What's your name young Wizard?")
+
+    hat = Math.floor(Math.random() * 4) + 1;
+
+    switch(hat){
+        case 1:
+             document.querySelector('#target').innerHTML = "Good news " + name + "! Your house is Gryffindor!";
+             break;
+        case 2:
+            document.querySelector('#target').innerHTML = "Good news " + name+ "! Your house is Slytherin!";
+            break;
+        case 3:
+            document.querySelector('#target').innerHTML = "Good news " + name+"! Your house is Hufflepuff!";
+            break;
+        case 4:
+            document.querySelector('#target').innerHTML = "Good news " + name+"! Your house is Ravenclaw!";
+            break
+        default:
+            document.querySelector('#target').innerHTML = "Are you sure you're a Wizard "+name+"?";
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
