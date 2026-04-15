@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Participants</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+    let count,names,name,list
+
+count = parseInt(prompt("How many participants?"));
+names = [];
+
+for (let i = 0; i < count; i++) {
+  name = prompt("Enter participant name:");
+  names.push(name);
+}
+names.sort();
+
+list = "<ol>";
+
+for (let i = 0; i < names.length; i++) {
+  list += "<li>" + names[i] + "</li>";
+}
+
+list += "</ol>";
+
+document.querySelector("#target").innerHTML = list
+
+</script>
+</body>
+</html>

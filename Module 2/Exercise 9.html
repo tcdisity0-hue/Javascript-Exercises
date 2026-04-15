@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Even</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+ let result,original,evens
+
+function even(numbers) {
+  result = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      result.push(numbers[i]);
+    }
+  }
+
+  return result;
+}
+
+original = [2, 7, 4];
+
+evens = even(original);
+
+console.log("Array:", original);
+console.log("Even numbers:", evens);
+
+</script>
+</body>
+</html>

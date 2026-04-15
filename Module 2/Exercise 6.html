@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+    let numbers,input;
+
+    numbers = [];
+
+    while (true) {
+  input = parseInt(prompt("Enter a number:"));
+
+  if (numbers.includes(input)) {
+    console.log("Number given twice.");
+    break;
+  }
+
+  numbers.push(input);
+}
+
+numbers.sort(function(a, b) {
+  return a - b;
+});
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+
+</script>
+</body>
+</html>

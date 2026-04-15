@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+ let result,rolls,sides
+
+
+function Dice(sides) {
+  return Math.floor(Math.random() * sides) + 1;
+}
+
+sides = parseInt(prompt("Enter number of sides on the dice:"));
+
+ rolls = [];
+
+do {
+  result = Dice(sides);
+  rolls.push(result);
+} while (result !== sides);
+
+let list = "<ul>";
+
+for (let i = 0; i < rolls.length; i++) {
+  list += `<li>${rolls[i]}</li>`;
+}
+
+list += "</ul>";
+
+document.querySelector("#target").innerHTML = list;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogs</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+    let dogs,name,list
+
+    dogs = [];
+
+for (let i = 0; i < 6; i++) {
+    name = prompt("Enter dog name:");
+    dogs.push(name);
+
+    dogs.sort();
+
+    dogs.reverse();
+
+    list = "<ul>";
+
+    for (let i = 0; i < dogs.length; i++) {
+        list += `<li>${dogs[i]}</li>`;
+    }
+
+    list += "</ul>";
+
+    document.querySelector("#target").innerHTML = list;
+
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+
+<p id="target"></p>
+
+<script>
+
+    let result,rolls;
+
+rolls = []
+
+function Dice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+do {
+  result = Dice();
+  rolls.push(result);
+} while (result !== 6);
+
+let list = "<ul>";
+
+for (let i = 0; i < rolls.length; i++) {
+  list += `<li>${rolls[i]}</li>`;
+}
+
+list += "</ul>";
+
+document.querySelector("#target").innerHTML = list;
+
+</script>
+</body>
+</html>
