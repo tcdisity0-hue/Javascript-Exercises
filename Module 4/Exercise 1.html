@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+
+<h1>Search!</h1>
+
+<form id="searchForm" action="https://api.tvmaze.com/search/shows">
+    <input id="query" name="q" type="text" placeholder="Enter show name">
+    <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+
+<script>
+
+let form, input, value, response, data, results2;
+
+form = document.getElementById("searchForm");
+results2 = document.getElementById("results");
+
+form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    input = document.getElementById("query");
+    value = input.value;
+
+    response = await fetch(`https://api.tvmaze.com/search/shows?q=${value}`);
+    data = await response.json();
+
+    console.log(data);
+
+    results2.innerHTML = '';
+
+    data.forEach(tvShow => {
+
+        let show = tvShow.show;
+
+        let article;
+        article = document.createElement("article");
+
+        let title;
+        title = document.createElement("h2");
+        title.textContent = show.name;
+
+        let link;
+        link = document.createElement("a");
+        link.href = show.url;
+        link.textContent = "View details";
+        link.target = "_blank";
+
+        let img;
+        img = document.createElement("img");
+        img.src = show.image?.medium || "";
+        img.alt = show.name;
+
+        let summary;
+        summary = document.createElement("div");
+        summary.innerHTML = show.summary;
+
+        article.appendChild(title);
+        article.appendChild(link);
+        article.appendChild(img);
+        article.appendChild(summary);
+
+        results2.appendChild(article);
+    });
+});
+
+</script>
+
+</body>
+</html>
